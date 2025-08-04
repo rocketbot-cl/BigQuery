@@ -1,0 +1,351 @@
+{
+  "author": "Guiredys Gomez",
+  "description": "Upload files to Cloud Storage",
+  "description_lang": {
+        "en": "This module allows you to upload files to CloudStorage.",
+        "es": "Este modulo permite subir archivos a CloudStorage.",
+        "pr": "Esse módulo permite fazer upload de arquivos para o CloudStorage."
+    },
+  "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "http://rocketbot.com/",
+  "name": "BigQuery",
+  "linux": true,
+  "windows": true,
+  "mac": true,
+  "docker": true,
+  "dependencies": {
+    "google-cloud-storage":"1.35.0"
+  },
+  "title": {
+    "en": "BigQuery",
+    "es": "BigQuery",
+    "pr": "BigQuery"
+  },
+  "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cGF0aCBkPSJtMjMyLDQxNmMtMTAxLjQ1OCwwLTE4NC04Mi41NDItMTg0LTE4NFMxMzAuNTQyLDQ4LDIzMiw0OHMxODQsODIuNTQyLDE4NCwxODQtODIuNTQyLDE4NC0xODQsMTg0Wm0wLTMzNmMtODMuODEzLDAtMTUyLDY4LjE4Ny0xNTIsMTUyczY4LjE4NywxNTIsMTUyLDE1MiwxNTItNjguMTg3LDE1Mi0xNTItNjguMTg3LTE1Mi0xNTItMTUyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0ibTMwNCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xMjcuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTI3LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTE2MCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xNzUuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTc1LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTguODM2LDAtMTYtNy4xNjQtMTYtMTZ2LTI0MGMwLTguODM2LDcuMTY0LTE2LDE2LTE2czE2LDcuMTY0LDE2LDE2djI0MGMwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTEwMS40NTgsMC0xODQtODIuNTQyLTE4NC0xODRoMzJjMCw4My44MTMsNjguMTg3LDE1MiwxNTIsMTUyczE1Mi02OC4xODcsMTUyLTE1MmgzMmMwLDEwMS40NTgtODIuNTQyLDE4NC0xODQsMTg0WiIgZmlsbD0iI2ZiYmMwNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTQxNiwyMzJoLTMyYzAtODMuODEzLTY4LjE4Ny0xNTItMTUyLTE1MlM4MCwxNDguMTg3LDgwLDIzMmgtMzJjMC0xMDEuNDU4LDgyLjU0Mi0xODQsMTg0LTE4NHMxODQsODIuNTQyLDE4NCwxODRaIiBmaWxsPSIjZWE0MzM1IiBzdHJva2Utd2lkdGg9IjAiLz48cGF0aCBkPSJtNDQ4LDQ2NGMtNC4wOTUsMC04LjE4OS0xLjU2Mi0xMS4zMTMtNC42ODZsLTk3LjIwNi05Ny4yMDZjLTYuMjQ5LTYuMjQ4LTYuMjQ5LTE2LjM3OSwwLTIyLjYyN3MxNi4zNzktNi4yNDksMjIuNjI3LDBsOTcuMjA2LDk3LjIwNmM2LjI0OSw2LjI0OSw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjUsMy4xMjUtNy4yMTksNC42ODctMTEuMzE0LDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTM2Mi4xMDcsMzYyLjEwN2wtMjIuNjI3LTIyLjYyN2M1OS4yNjUtNTkuMjY1LDU5LjI2NS0xNTUuNjk1LDAtMjE0Ljk2bDIyLjYyNy0yMi42MjdjMzQuNzUzLDM0Ljc1Myw1My44OTMsODAuOTU5LDUzLjg5MywxMzAuMTA3cy0xOS4xNCw5NS4zNTQtNTMuODkzLDEzMC4xMDdaIiBmaWxsPSIjNDI4NWY0IiBzdHJva2Utd2lkdGg9IjAiLz48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxwYXRoIGQ9Im00NDgsNDY0Yy00LjA5NSwwLTguMTg5LTEuNTYyLTExLjMxMy00LjY4N2wtMTQ0LTE0My45OTljLTYuMjQ5LTYuMjQ5LTYuMjQ5LTE2LjM3OSwwLTIyLjYyNyw2LjI0OC02LjI0OSwxNi4zNzktNi4yNDksMjIuNjI3LDBsMTQ0LDE0NGM2LjI0OSw2LjI0OCw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjQsMy4xMjUtNy4yMTksNC42ODctMTEuMzEzLDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9nPjwvc3ZnPg==",
+  "children": [
+    {
+      "en": {
+        "title": "Setup Google Cloud BigQuery credentials",
+        "description": "Configure Cloud BigQuery credentials",
+        "title_options": "Select Option",
+        "options": null
+      },
+      "es": {
+        "title": "Configurar credenciales Google Cloud BigQuery",
+        "description": "Configura credenciales de Cloud BigQuery",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:\\Usuario\\Desktop\\credentials.json",
+              "en": "C:\\Usuario\\Desktop\\credentials.json",
+              "cn": "C:\\Usuario\\Desktop\\credentials.json"
+            },
+            "title": {
+              "es": "Ruta archivo de credenciales",
+              "en": "Credentials file path",
+              "cn": "Credentials file path"
+            },
+            "description": {
+              "es": "Ruta del archivo de credenciales de Google Cloud BigQuery",
+              "en": "Google Cloud BigQuery credentials file path",
+              "cn": "Google Cloud BigQuery credentials file path"
+            },
+            "id": "credentials_path",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cGF0aCBkPSJtMjMyLDQxNmMtMTAxLjQ1OCwwLTE4NC04Mi41NDItMTg0LTE4NFMxMzAuNTQyLDQ4LDIzMiw0OHMxODQsODIuNTQyLDE4NCwxODQtODIuNTQyLDE4NC0xODQsMTg0Wm0wLTMzNmMtODMuODEzLDAtMTUyLDY4LjE4Ny0xNTIsMTUyczY4LjE4NywxNTIsMTUyLDE1MiwxNTItNjguMTg3LDE1Mi0xNTItNjguMTg3LTE1Mi0xNTItMTUyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0ibTMwNCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xMjcuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTI3LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTE2MCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xNzUuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTc1LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTguODM2LDAtMTYtNy4xNjQtMTYtMTZ2LTI0MGMwLTguODM2LDcuMTY0LTE2LDE2LTE2czE2LDcuMTY0LDE2LDE2djI0MGMwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTEwMS40NTgsMC0xODQtODIuNTQyLTE4NC0xODRoMzJjMCw4My44MTMsNjguMTg3LDE1MiwxNTIsMTUyczE1Mi02OC4xODcsMTUyLTE1MmgzMmMwLDEwMS40NTgtODIuNTQyLDE4NC0xODQsMTg0WiIgZmlsbD0iI2ZiYmMwNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTQxNiwyMzJoLTMyYzAtODMuODEzLTY4LjE4Ny0xNTItMTUyLTE1MlM4MCwxNDguMTg3LDgwLDIzMmgtMzJjMC0xMDEuNDU4LDgyLjU0Mi0xODQsMTg0LTE4NHMxODQsODIuNTQyLDE4NCwxODRaIiBmaWxsPSIjZWE0MzM1IiBzdHJva2Utd2lkdGg9IjAiLz48cGF0aCBkPSJtNDQ4LDQ2NGMtNC4wOTUsMC04LjE4OS0xLjU2Mi0xMS4zMTMtNC42ODZsLTk3LjIwNi05Ny4yMDZjLTYuMjQ5LTYuMjQ4LTYuMjQ5LTE2LjM3OSwwLTIyLjYyN3MxNi4zNzktNi4yNDksMjIuNjI3LDBsOTcuMjA2LDk3LjIwNmM2LjI0OSw2LjI0OSw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjUsMy4xMjUtNy4yMTksNC42ODctMTEuMzE0LDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTM2Mi4xMDcsMzYyLjEwN2wtMjIuNjI3LTIyLjYyN2M1OS4yNjUtNTkuMjY1LDU5LjI2NS0xNTUuNjk1LDAtMjE0Ljk2bDIyLjYyNy0yMi42MjdjMzQuNzUzLDM0Ljc1Myw1My44OTMsODAuOTU5LDUzLjg5MywxMzAuMTA3cy0xOS4xNCw5NS4zNTQtNTMuODkzLDEzMC4xMDdaIiBmaWxsPSIjNDI4NWY0IiBzdHJva2Utd2lkdGg9IjAiLz48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxwYXRoIGQ9Im00NDgsNDY0Yy00LjA5NSwwLTguMTg5LTEuNTYyLTExLjMxMy00LjY4N2wtMTQ0LTE0My45OTljLTYuMjQ5LTYuMjQ5LTYuMjQ5LTE2LjM3OSwwLTIyLjYyNyw2LjI0OC02LjI0OSwxNi4zNzktNi4yNDksMjIuNjI3LDBsMTQ0LDE0NGM2LjI0OSw2LjI0OCw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjQsMy4xMjUtNy4yMTksNC42ODctMTEuMzEzLDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9nPjwvc3ZnPg==",
+      "module": "setCredentials",
+      "module_name": "BigQuery",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": false,
+      "windows": true,
+      "mac": false,
+      "docker": false
+    },
+    {
+      "title": {
+        "en": "Read data from BigQuery",
+        "es": "Leer datos de BigQuery"
+      },
+      "description": {
+        "en": "Run an SQL query and get results",
+        "es": "Ejecutar una consulta SQL y obtener resultados "
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "SELECT producto_id FROM proyecto_id.store.sell",
+            "title": {
+              "en": "Query String:",
+              "es": "Consulta:"
+            },
+            "description": {
+              "en": "Consulta SQL",
+              "es": "Query SQL"
+            },
+            "id": "query_string",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "bigquery-467823",
+            "title": {
+              "en": "Project ID:",
+              "es": "ID del Proyecto:"
+            },
+            "description": {
+              "en": "Project ID",
+              "es": "Project ID"
+            },
+            "id": "project_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "description": {
+              "es": "Resultado",
+              "en": "Result",
+              "pr": "Resultado"
+            },
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Asignar resultado a Variable:",
+              "en": "Assign result to a Variable:",
+              "pr": "Atribuir resultado à variável"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "remove_vars": true,
+            "id": "var_",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cGF0aCBkPSJtMjMyLDQxNmMtMTAxLjQ1OCwwLTE4NC04Mi41NDItMTg0LTE4NFMxMzAuNTQyLDQ4LDIzMiw0OHMxODQsODIuNTQyLDE4NCwxODQtODIuNTQyLDE4NC0xODQsMTg0Wm0wLTMzNmMtODMuODEzLDAtMTUyLDY4LjE4Ny0xNTIsMTUyczY4LjE4NywxNTIsMTUyLDE1MiwxNTItNjguMTg3LDE1Mi0xNTItNjguMTg3LTE1Mi0xNTItMTUyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0ibTMwNCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xMjcuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTI3LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTE2MCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xNzUuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTc1LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTguODM2LDAtMTYtNy4xNjQtMTYtMTZ2LTI0MGMwLTguODM2LDcuMTY0LTE2LDE2LTE2czE2LDcuMTY0LDE2LDE2djI0MGMwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTEwMS40NTgsMC0xODQtODIuNTQyLTE4NC0xODRoMzJjMCw4My44MTMsNjguMTg3LDE1MiwxNTIsMTUyczE1Mi02OC4xODcsMTUyLTE1MmgzMmMwLDEwMS40NTgtODIuNTQyLDE4NC0xODQsMTg0WiIgZmlsbD0iI2ZiYmMwNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTQxNiwyMzJoLTMyYzAtODMuODEzLTY4LjE4Ny0xNTItMTUyLTE1MlM4MCwxNDguMTg3LDgwLDIzMmgtMzJjMC0xMDEuNDU4LDgyLjU0Mi0xODQsMTg0LTE4NHMxODQsODIuNTQyLDE4NCwxODRaIiBmaWxsPSIjZWE0MzM1IiBzdHJva2Utd2lkdGg9IjAiLz48cGF0aCBkPSJtNDQ4LDQ2NGMtNC4wOTUsMC04LjE4OS0xLjU2Mi0xMS4zMTMtNC42ODZsLTk3LjIwNi05Ny4yMDZjLTYuMjQ5LTYuMjQ4LTYuMjQ5LTE2LjM3OSwwLTIyLjYyN3MxNi4zNzktNi4yNDksMjIuNjI3LDBsOTcuMjA2LDk3LjIwNmM2LjI0OSw2LjI0OSw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjUsMy4xMjUtNy4yMTksNC42ODctMTEuMzE0LDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTM2Mi4xMDcsMzYyLjEwN2wtMjIuNjI3LTIyLjYyN2M1OS4yNjUtNTkuMjY1LDU5LjI2NS0xNTUuNjk1LDAtMjE0Ljk2bDIyLjYyNy0yMi42MjdjMzQuNzUzLDM0Ljc1Myw1My44OTMsODAuOTU5LDUzLjg5MywxMzAuMTA3cy0xOS4xNCw5NS4zNTQtNTMuODkzLDEzMC4xMDdaIiBmaWxsPSIjNDI4NWY0IiBzdHJva2Utd2lkdGg9IjAiLz48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxwYXRoIGQ9Im00NDgsNDY0Yy00LjA5NSwwLTguMTg5LTEuNTYyLTExLjMxMy00LjY4N2wtMTQ0LTE0My45OTljLTYuMjQ5LTYuMjQ5LTYuMjQ5LTE2LjM3OSwwLTIyLjYyNyw2LjI0OC02LjI0OSwxNi4zNzktNi4yNDksMjIuNjI3LDBsMTQ0LDE0NGM2LjI0OSw2LjI0OCw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjQsMy4xMjUtNy4yMTksNC42ODctMTEuMzEzLDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9nPjwvc3ZnPg==",
+      "module": "readDataFromQuery",
+      "module_name": "BigQuery",
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false,
+      "visible": true,
+      "options": false
+    },
+    {
+      "title": {
+        "en": "Load data",
+        "es": "Cargar datos"
+      },
+      "description": {
+        "en": "Load data from CSV file",
+        "es": "Cargar datos desde un archovo CSV"
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "dataset_id",
+            "title": {
+              "en": "Dataset ID:",
+              "es": "Dataset ID:"
+            },
+            "description": {
+              "en": "Dataset ID",
+              "es": "Dataset ID"
+            },
+            "id": "dataset_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "table_id",
+            "title": {
+              "en": "Table ID:",
+              "es": "Table ID:"
+            },
+            "description": {
+              "en": "table_id",
+              "es": "table_id"
+            },
+            "id": "table_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:\\Usuario\\Desktop\\file.csv",
+              "en": "C:\\Usuario\\Desktop\\file.csv"
+            },
+            "title": {
+              "es": "Ruta del archivo CSV",
+              "en": "File path CSV"
+            },
+            "description": {
+              "es": "Ruta del archivo csv",
+              "en": "File path csv"
+            },
+            "id": "file_path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "checkbox",
+            "description": {
+              "es": "Marcar si el archivo .csv tiene encabezados",
+              "en": "Check if the .csv file has headers",
+              "pr": "Marcar se o arquivo .csv tem cabeçalhos"
+            },
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "title": {
+              "es": "Tiene Cabeceras",
+              "en": "Has Headers",
+              "pr": "tem cabeçalhos"
+            },
+            "help":{
+              "es": "Marcar si el archivo .csv tiene encabezados",
+              "en": "Check if the .csv file has headers",
+              "pr": "Marcar se o arquivo .csv tem cabeçalhos"
+            },
+            "id": "has_header",
+            "css": "col-md-6"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "WRITE_APPEND",
+              "en": "WRITE_APPEND",
+              "pr": "WRITE_APPEND"
+            },
+            "title": {
+              "es": "Disposicion de escritura",
+              "en": "Write disposition",
+              "pr": "Organizar por"
+            },
+            "description": {
+              "es": "Forma en que se cargaran los datos",
+              "en": "Sort the listed emails by the desired parameter",
+              "pr": "Classifique os emails listados pelo parâmetro desejado"
+            },
+            "options": [
+              {
+                "title": "WRITE_TRUNCATE",
+                "value": "WRITE_TRUNCATE"
+              },
+              {
+                "title": "WRITE_APPEND",
+                "value": "WRITE_APPEND"
+              },
+              {
+                "title": "WRITE_EMPTY",
+                "value": "WRITE_EMPTY"
+              }
+            ],
+            "id": "write_disposition",
+            "css": "col-md-6"
+          },
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:\\Usuario\\Desktop\\schema.json",
+              "en": "C:\\Usuario\\Desktop\\schema.json"
+            },
+            "title": {
+              "es": "Cadena JSON del esquema",
+              "en": "Schema JSON"
+            },
+            "description": {
+              "es": "Ruta del archivo json (opcional)",
+              "en": "File path json (optional)"
+            },
+            "id": "schema_json",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "bigquery-467823",
+            "title": {
+              "en": "Project ID:",
+              "es": "ID del Proyecto:"
+            },
+            "description": {
+              "en": "Project ID",
+              "es": "Project ID"
+            },
+            "id": "project_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "description": {
+              "es": "Resultado",
+              "en": "Result",
+              "pr": "Resultado"
+            },
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Asignar resultado a Variable:",
+              "en": "Assign result to a Variable:",
+              "pr": "Atribuir resultado à variável"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "remove_vars": true,
+            "id": "var_",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cGF0aCBkPSJtMjMyLDQxNmMtMTAxLjQ1OCwwLTE4NC04Mi41NDItMTg0LTE4NFMxMzAuNTQyLDQ4LDIzMiw0OHMxODQsODIuNTQyLDE4NCwxODQtODIuNTQyLDE4NC0xODQsMTg0Wm0wLTMzNmMtODMuODEzLDAtMTUyLDY4LjE4Ny0xNTIsMTUyczY4LjE4NywxNTIsMTUyLDE1MiwxNTItNjguMTg3LDE1Mi0xNTItNjguMTg3LTE1Mi0xNTItMTUyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0ibTMwNCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xMjcuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTI3LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTE2MCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xNzUuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTc1LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTguODM2LDAtMTYtNy4xNjQtMTYtMTZ2LTI0MGMwLTguODM2LDcuMTY0LTE2LDE2LTE2czE2LDcuMTY0LDE2LDE2djI0MGMwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTEwMS40NTgsMC0xODQtODIuNTQyLTE4NC0xODRoMzJjMCw4My44MTMsNjguMTg3LDE1MiwxNTIsMTUyczE1Mi02OC4xODcsMTUyLTE1MmgzMmMwLDEwMS40NTgtODIuNTQyLDE4NC0xODQsMTg0WiIgZmlsbD0iI2ZiYmMwNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTQxNiwyMzJoLTMyYzAtODMuODEzLTY4LjE4Ny0xNTItMTUyLTE1MlM4MCwxNDguMTg3LDgwLDIzMmgtMzJjMC0xMDEuNDU4LDgyLjU0Mi0xODQsMTg0LTE4NHMxODQsODIuNTQyLDE4NCwxODRaIiBmaWxsPSIjZWE0MzM1IiBzdHJva2Utd2lkdGg9IjAiLz48cGF0aCBkPSJtNDQ4LDQ2NGMtNC4wOTUsMC04LjE4OS0xLjU2Mi0xMS4zMTMtNC42ODZsLTk3LjIwNi05Ny4yMDZjLTYuMjQ5LTYuMjQ4LTYuMjQ5LTE2LjM3OSwwLTIyLjYyN3MxNi4zNzktNi4yNDksMjIuNjI3LDBsOTcuMjA2LDk3LjIwNmM2LjI0OSw2LjI0OSw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjUsMy4xMjUtNy4yMTksNC42ODctMTEuMzE0LDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTM2Mi4xMDcsMzYyLjEwN2wtMjIuNjI3LTIyLjYyN2M1OS4yNjUtNTkuMjY1LDU5LjI2NS0xNTUuNjk1LDAtMjE0Ljk2bDIyLjYyNy0yMi42MjdjMzQuNzUzLDM0Ljc1Myw1My44OTMsODAuOTU5LDUzLjg5MywxMzAuMTA3cy0xOS4xNCw5NS4zNTQtNTMuODkzLDEzMC4xMDdaIiBmaWxsPSIjNDI4NWY0IiBzdHJva2Utd2lkdGg9IjAiLz48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxwYXRoIGQ9Im00NDgsNDY0Yy00LjA5NSwwLTguMTg5LTEuNTYyLTExLjMxMy00LjY4N2wtMTQ0LTE0My45OTljLTYuMjQ5LTYuMjQ5LTYuMjQ5LTE2LjM3OSwwLTIyLjYyNyw2LjI0OC02LjI0OSwxNi4zNzktNi4yNDksMjIuNjI3LDBsMTQ0LDE0NGM2LjI0OSw2LjI0OCw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjQsMy4xMjUtNy4yMTksNC42ODctMTEuMzEzLDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9nPjwvc3ZnPg==",
+      "module": "insertRows",
+      "module_name": "BigQuery",
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false,
+      "visible": true,
+      "options": false
+    }
+  ]
+}
