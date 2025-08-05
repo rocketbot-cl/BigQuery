@@ -2,13 +2,13 @@
 
 
 
-# CloudStorage
+# BigQuery
   
-This module allows you to upload files to CloudStorage.  
+This module allows for the integration and manipulation of data in Google BigQuery.  
 
-*Read this in other languages: [English](Manual_CloudStorage.md), [Português](Manual_CloudStorage.pr.md), [Español](Manual_CloudStorage.es.md)*
+*Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs\Banner_CloudStorage.png)
+![banner](imgs/Banner_BigQuery.png o jpg)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -34,7 +34,7 @@ Before using this module, you must have a Gmail account to access Google Cloud:
 3. **Enable the Google Cloud Storage API**
 - In the Google Cloud Console search bar, type "APIs & Services" and enter that section:
 - Click "Enable APIs and services."
-- Search for "Cloud Storage API" and enable it.
+- Search for "BigQuery API" and enable it.
 
 4. **Create a service account**
 
@@ -42,9 +42,10 @@ Before using this module, you must have a Gmail account to access Google Cloud:
 - Click "Create service account."
 - Specify a name and description for the service account.
 - Assign the required role:
-- Under "Select a role," search for "Storage Admin."
-- Storage Admin.
-- This role grants permissions to manage Cloud Storage files and settings.
+- Under 
+"Select a role," search for "BigQuery Admin."
+- BigQuery Admin.
+- This role grants permissions to manage all BigQuery resources and data.
 - Continue and click "Create."
 
 5. **Generate a service account key**
@@ -56,19 +57,32 @@ Before using this module, you must have a Gmail account to access Google Cloud:
 
 ## Description of the commands
 
-### Setup Google Cloud Storage credentials
+### Setup Google Cloud BigQuery credentials
   
-Configure Cloud Storage credentials
+Configure Cloud BigQuery credentials
 |Parameters|Description|example|
 | --- | --- | --- |
-|Credentials file path|Google Cloud Storage credentials file path|C:\Usuario\Desktop\credentials.json|
+|Credentials file path|Google Cloud BigQuery credentials file path|C:\Usuario\Desktop\credentials.json|
 
-### Upload file
+### Read data from BigQuery
   
-Upload a file
+Run an SQL query and get results
 |Parameters|Description|example|
 | --- | --- | --- |
-|File path|File path to upload|C:\Usuario\Desktop\file.png|
-|Bucket name|The name of the bucket where the file will be uploaded|your-bucket-name|
-|Blob name|The name of the blob where the file will be uploaded|your destination blob name|
-|Timeout|Timeout of the request. If left empty, by default is 1000|1000|
+|Query String|Consulta SQL|SELECT producto_id FROM proyecto_id.store.sell|
+|Project ID|Project ID|bigquery-467823|
+|Assign result to a Variable|Result|Variable|
+
+### Load data
+  
+Load data from CSV file
+|Parameters|Description|example|
+| --- | --- | --- |
+|Dataset ID|Dataset ID|dataset_id|
+|Table ID|table_id|table_id|
+|File path CSV|File path csv|C:\Usuario\Desktop\file.csv|
+|Has Headers|Check if the .csv file has headers|True|
+|Write disposition|Sort the listed emails by the desired parameter|WRITE_APPEND|
+|Schema JSON|File path json (optional)|C:\Usuario\Desktop\schema.json|
+|Project ID|Project ID|bigquery-467823|
+|Assign result to a Variable|Result|Variable|

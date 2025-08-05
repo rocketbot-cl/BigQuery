@@ -2,9 +2,9 @@
 
 
 
-# CloudStorage
+# BigQuery
   
-Esse módulo permite fazer upload de arquivos para o CloudStorage.  
+Este módulo permite a integração e manipulação de dados no Google BigQuery.  
 
 *Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
@@ -21,8 +21,11 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1.   
 
 
-2. Upload file  
-Upload a file  
+2. Read data from BigQuery  
+Run an SQL query and get results
+
+3. Load data  
+Load data from CSV file  
 
 
 

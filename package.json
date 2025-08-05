@@ -1,13 +1,13 @@
 {
   "author": "Guiredys Gomez",
-  "description": "Upload files to Cloud Storage",
+  "description": "Este módulo permite la integración y manipulación de datos en Google BigQuery.",
   "description_lang": {
-        "en": "This module allows you to upload files to CloudStorage.",
-        "es": "Este modulo permite subir archivos a CloudStorage.",
-        "pr": "Esse módulo permite fazer upload de arquivos para o CloudStorage."
+        "en": "This module allows for the integration and manipulation of data in Google BigQuery.",
+        "es": "Este módulo permite la integración y manipulación de datos en Google BigQuery.",
+        "pr": "Este módulo permite a integração e manipulação de dados no Google BigQuery."
     },
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "homepage": "http://rocketbot.com/",
   "name": "BigQuery",
@@ -46,17 +46,17 @@
             "placeholder": {
               "es": "C:\\Usuario\\Desktop\\credentials.json",
               "en": "C:\\Usuario\\Desktop\\credentials.json",
-              "cn": "C:\\Usuario\\Desktop\\credentials.json"
+              "pr": "C:\\Usuario\\Desktop\\credentials.json"
             },
             "title": {
               "es": "Ruta archivo de credenciales",
               "en": "Credentials file path",
-              "cn": "Credentials file path"
+              "pr": "Caminho do arquivo de credenciais"
             },
             "description": {
               "es": "Ruta del archivo de credenciales de Google Cloud BigQuery",
               "en": "Google Cloud BigQuery credentials file path",
-              "cn": "Google Cloud BigQuery credentials file path"
+              "pr": "Caminho do arquivo de credenciais do Google Cloud BigQuery"
             },
             "id": "credentials_path",
             "css": "col-md-12"
@@ -79,11 +79,19 @@
     {
       "title": {
         "en": "Read data from BigQuery",
-        "es": "Leer datos de BigQuery"
+        "es": "Leer datos de BigQuery",
+        "pr": "Ler dados do BigQuery"
       },
       "description": {
         "en": "Run an SQL query and get results",
-        "es": "Ejecutar una consulta SQL y obtener resultados "
+        "es": "Ejecutar una consulta SQL y obtener resultados ",
+        "pr": "Executar uma consulta SQL e obter resultados"
+      },
+      "longDescription": {
+        "en": "This command executes a SQL query in BigQuery, retrieves the results, and stores them as a list of dictionaries in a specified variable. It allows direct reading of data from a BigQuery table or view.",
+        "es": "El comando ejecuta una consulta SQL en BigQuery, recupera los resultados y los almacena como una lista de diccionarios en una variable especificada. Permite leer datos directamente de una tabla o vista de BigQuery.",
+        "pr": "Este comando executa uma consulta SQL no BigQuery, recupera os resultados e os armazena como uma lista de dicionários em uma variável especificada. Ele permite a leitura direta de dados de uma tabela ou visualização do BigQuery.",
+        "ch": "此命令在 BigQuery 中执行 SQL 查询，检索结果，并将其作为字典列表存储在指定的变量中。它允许直接从 BigQuery 表或视图中读取数据。"
       },
       "form": {
         "css": "modal-lg",
@@ -94,11 +102,13 @@
             "placeholder": "SELECT producto_id FROM proyecto_id.store.sell",
             "title": {
               "en": "Query String:",
-              "es": "Consulta:"
+              "es": "Consulta:",
+              "pr": "Consulta:"
             },
             "description": {
               "en": "Consulta SQL",
-              "es": "Query SQL"
+              "es": "Query SQL",
+              "pr": "Consulta SQL:"
             },
             "id": "query_string",
             "css": "col-md-12"
@@ -108,11 +118,13 @@
             "placeholder": "bigquery-467823",
             "title": {
               "en": "Project ID:",
-              "es": "ID del Proyecto:"
+              "es": "ID del Proyecto:",
+              "pr": "ID do Projeto:"
             },
             "description": {
               "en": "Project ID",
-              "es": "Project ID"
+              "es": "Project ID",
+              "pr": "Project ID"
             },
             "id": "project_id",
             "css": "col-md-12"
@@ -151,9 +163,9 @@
       "module_name": "BigQuery",
       "father": "module",
       "group": "scripts",
-      "linux": true,
+      "linux": false,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": false,
       "visible": true,
       "options": false
@@ -161,11 +173,19 @@
     {
       "title": {
         "en": "Load data",
-        "es": "Cargar datos"
+        "es": "Cargar datos",
+        "pr": "Carregar dados"
       },
       "description": {
         "en": "Load data from CSV file",
-        "es": "Cargar datos desde un archovo CSV"
+        "es": "Cargar datos desde un archivo CSV",
+        "pr": "Carregar dados de um arquivo CSV"
+      },
+      "longDescription": {
+        "en": "This command loads data from a CSV file (either local or from Google Cloud Storage) into a BigQuery table. It allows configuration of the loading behavior, such as automatic schema detection, whether the file has a header, and the write disposition.",
+        "es": "El comando carga datos desde un archivo CSV (local o de Google Cloud Storage) a una tabla de BigQuery. Permite configurar el comportamiento de la carga, como la detección automática de esquemas, si el archivo tiene encabezado y la disposición de escritura.",
+        "pr": "Este comando carrega dados de um arquivo CSV (local ou do Google Cloud Storage) para uma tabela do BigQuery. Ele permite configurar o comportamento de carregamento, como detecção automática de esquema, se o arquivo tem cabeçalho e a disposição de gravação.",
+        "ch": "此命令将数据从 CSV 文件（本地或 Google Cloud Storage）加载到 BigQuery 表中。它允许配置加载行为，例如自动模式检测、文件是否包含标题以及写入处置。"
       },
       "form": {
         "css": "modal-lg",
@@ -176,11 +196,13 @@
             "placeholder": "dataset_id",
             "title": {
               "en": "Dataset ID:",
-              "es": "Dataset ID:"
+              "es": "Dataset ID:",
+              "pr": "Dataset ID"
             },
             "description": {
               "en": "Dataset ID",
-              "es": "Dataset ID"
+              "es": "Dataset ID",
+              "pr": "Dataset ID"
             },
             "id": "dataset_id",
             "css": "col-md-12"
@@ -190,11 +212,13 @@
             "placeholder": "table_id",
             "title": {
               "en": "Table ID:",
-              "es": "Table ID:"
+              "es": "Table ID:",
+              "pr": "table ID"
             },
             "description": {
               "en": "table_id",
-              "es": "table_id"
+              "es": "table_id",
+              "pr": "table_id"
             },
             "id": "table_id",
             "css": "col-md-12"
@@ -203,15 +227,18 @@
             "type": "file_select",
             "placeholder": {
               "es": "C:\\Usuario\\Desktop\\file.csv",
-              "en": "C:\\Usuario\\Desktop\\file.csv"
+              "en": "C:\\Usuario\\Desktop\\file.csv",
+              "pr": "C:\\Usuario\\Desktop\\file.csv"
             },
             "title": {
               "es": "Ruta del archivo CSV",
-              "en": "File path CSV"
+              "en": "File path CSV",
+              "pr": "Caminho do arquivo csv"
             },
             "description": {
               "es": "Ruta del archivo csv",
-              "en": "File path csv"
+              "en": "File path csv",
+              "pr": "Caminho do arquivo csv"
             },
             "id": "file_path",
             "css": "col-md-12"
@@ -251,12 +278,12 @@
             "title": {
               "es": "Disposicion de escritura",
               "en": "Write disposition",
-              "pr": "Organizar por"
+              "pr": "Escreva a disposição"
             },
             "description": {
               "es": "Forma en que se cargaran los datos",
-              "en": "Sort the listed emails by the desired parameter",
-              "pr": "Classifique os emails listados pelo parâmetro desejado"
+              "en": "The way the data will be loaded",
+              "pr": "A forma como os dados serão carregados"
             },
             "options": [
               {
@@ -283,11 +310,13 @@
             },
             "title": {
               "es": "Cadena JSON del esquema",
-              "en": "Schema JSON"
+              "en": "Schema JSON",
+              "pr": "Esquema JSON"
             },
             "description": {
               "es": "Ruta del archivo json (opcional)",
-              "en": "File path json (optional)"
+              "en": "File path json (optional)",
+              "pr": "Caminho do arquivo json (opcional)"
             },
             "id": "schema_json",
             "css": "col-md-12"
@@ -297,11 +326,13 @@
             "placeholder": "bigquery-467823",
             "title": {
               "en": "Project ID:",
-              "es": "ID del Proyecto:"
+              "es": "ID del Proyecto:",
+              "pr": "ID do Projeto"
             },
             "description": {
               "en": "Project ID",
-              "es": "Project ID"
+              "es": "Project ID",
+              "pr": "Project ID"
             },
             "id": "project_id",
             "css": "col-md-12"
@@ -336,13 +367,13 @@
       },
       "video_youtube": "",
       "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJiIj48cGF0aCBkPSJtMjMyLDQxNmMtMTAxLjQ1OCwwLTE4NC04Mi41NDItMTg0LTE4NFMxMzAuNTQyLDQ4LDIzMiw0OHMxODQsODIuNTQyLDE4NCwxODQtODIuNTQyLDE4NC0xODQsMTg0Wm0wLTMzNmMtODMuODEzLDAtMTUyLDY4LjE4Ny0xNTIsMTUyczY4LjE4NywxNTIsMTUyLDE1MiwxNTItNjguMTg3LDE1Mi0xNTItNjguMTg3LTE1Mi0xNTItMTUyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0ibTMwNCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xMjcuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTI3LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTE2MCwzOTkuODMzYy04LjgzNiwwLTE2LTcuMTY0LTE2LTE2di0xNzUuODMzYzAtOC44MzYsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjQsMTYsMTZ2MTc1LjgzM2MwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTguODM2LDAtMTYtNy4xNjQtMTYtMTZ2LTI0MGMwLTguODM2LDcuMTY0LTE2LDE2LTE2czE2LDcuMTY0LDE2LDE2djI0MGMwLDguODM2LTcuMTY0LDE2LTE2LDE2WiIgZmlsbD0iIzM0YTg1MyIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTIzMiw0MTZjLTEwMS40NTgsMC0xODQtODIuNTQyLTE4NC0xODRoMzJjMCw4My44MTMsNjguMTg3LDE1MiwxNTIsMTUyczE1Mi02OC4xODcsMTUyLTE1MmgzMmMwLDEwMS40NTgtODIuNTQyLDE4NC0xODQsMTg0WiIgZmlsbD0iI2ZiYmMwNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTQxNiwyMzJoLTMyYzAtODMuODEzLTY4LjE4Ny0xNTItMTUyLTE1MlM4MCwxNDguMTg3LDgwLDIzMmgtMzJjMC0xMDEuNDU4LDgyLjU0Mi0xODQsMTg0LTE4NHMxODQsODIuNTQyLDE4NCwxODRaIiBmaWxsPSIjZWE0MzM1IiBzdHJva2Utd2lkdGg9IjAiLz48cGF0aCBkPSJtNDQ4LDQ2NGMtNC4wOTUsMC04LjE4OS0xLjU2Mi0xMS4zMTMtNC42ODZsLTk3LjIwNi05Ny4yMDZjLTYuMjQ5LTYuMjQ4LTYuMjQ5LTE2LjM3OSwwLTIyLjYyN3MxNi4zNzktNi4yNDksMjIuNjI3LDBsOTcuMjA2LDk3LjIwNmM2LjI0OSw2LjI0OSw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjUsMy4xMjUtNy4yMTksNC42ODctMTEuMzE0LDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PHBhdGggZD0ibTM2Mi4xMDcsMzYyLjEwN2wtMjIuNjI3LTIyLjYyN2M1OS4yNjUtNTkuMjY1LDU5LjI2NS0xNTUuNjk1LDAtMjE0Ljk2bDIyLjYyNy0yMi42MjdjMzQuNzUzLDM0Ljc1Myw1My44OTMsODAuOTU5LDUzLjg5MywxMzAuMTA3cy0xOS4xNCw5NS4zNTQtNTMuODkzLDEzMC4xMDdaIiBmaWxsPSIjNDI4NWY0IiBzdHJva2Utd2lkdGg9IjAiLz48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxwYXRoIGQ9Im00NDgsNDY0Yy00LjA5NSwwLTguMTg5LTEuNTYyLTExLjMxMy00LjY4N2wtMTQ0LTE0My45OTljLTYuMjQ5LTYuMjQ5LTYuMjQ5LTE2LjM3OSwwLTIyLjYyNyw2LjI0OC02LjI0OSwxNi4zNzktNi4yNDksMjIuNjI3LDBsMTQ0LDE0NGM2LjI0OSw2LjI0OCw2LjI0OSwxNi4zNzksMCwyMi42MjctMy4xMjQsMy4xMjUtNy4yMTksNC42ODctMTEuMzEzLDQuNjg3WiIgZmlsbD0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIwIi8+PC9nPjwvc3ZnPg==",
-      "module": "insertRows",
+      "module": "loadDataFromCSVFile",
       "module_name": "BigQuery",
       "father": "module",
       "group": "scripts",
-      "linux": true,
+      "linux": false,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": false,
       "visible": true,
       "options": false

@@ -28,9 +28,9 @@ import sys
 import json
 
 base_path = tmp_global_obj["basepath"]
-cur_path = base_path + "modules" + os.sep + "Google-BigQuery" + os.sep + "libs" + os.sep
+cur_path = base_path + "modules" + os.sep + "BigQuery" + os.sep + "libs" + os.sep
 sys.path.append(cur_path)
-
+global bigquery
 from google.cloud import bigquery
 from google.oauth2 import service_account
 import pandas as pd
@@ -42,18 +42,7 @@ if module == "setCredentials":
     credentials_path = GetParams("credentials_path")
     print("hhh")
     try:
-        #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
-        print("hhh")
-        credentials = service_account.Credentials.from_service_account_file(credentials_path)
-        # Prueba: listar datasets
-        print("aquiiiii")
-        client = bigquery.Client(credentials=credentials, project=credentials.project_id)
-        datasets = list(client.list_datasets())
-        if datasets:
-            print(" Conexión exitosa. Datasets encontrados:")
-            for dataset in datasets:
-                print(f" - {dataset.dataset_id}")
-
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
     except Exception as e:
         print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
         PrintException()
@@ -73,7 +62,6 @@ if module == "readDataFromQuery":
         SetVar(var_, list_)
         
     except Exception as e:
-        print("\x1B[31;40mOcurrió un error al leer datos de BigQuery mediante consulta.\x1B[0m")
         PrintException()
         raise e
     
@@ -108,7 +96,7 @@ if module == "insertRows":
 if module == "loadDataFromCSVFile":
     dataset_id = GetParams("dataset_id")
     table_id = GetParams("table_id")
-    path_file = GetParams("path_file") #'gs://bucket/file.csv' o 'file.csv'
+    path_file = GetParams("file_path") #'gs://bucket/file.csv' o 'file.csv'
     write_disposition = GetParams("write_disposition") # 'WRITE_TRUNCATE', 'WRITE_APPEND', 'WRITE_EMPTY'
     schema_json = GetParams("schema_json") # Opcional: Cadena JSON del esquema, si no se infiere
     project_id = GetParams("project_id") # Opcional
@@ -136,8 +124,10 @@ if module == "loadDataFromCSVFile":
         job_config.write_disposition = getattr(bigquery.WriteDisposition, write_disposition.upper())
         
         # Si se proporciona un esquema explícito, usarlo y desactivar la autodetección
+
         if schema_json:
-            schema_data = json.loads(schema_json)
+            with open(schema_json, 'r', encoding='utf-8') as f:
+                schema_data = json.load(f) 
             job_config.schema = [
                 bigquery.SchemaField(field['name'], field['type'], mode=field.get('mode', 'NULLABLE'))
                 for field in schema_data
@@ -165,6 +155,5 @@ if module == "loadDataFromCSVFile":
        
     except Exception as e:
         SetVar(var_, False)
-        print("\x1B[31;40mOcurrió un error al cargar datos en BigQuery desde el archivo CSV.\x1B[0m")
         PrintException()
         raise e

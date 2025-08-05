@@ -17,7 +17,7 @@ Before using this module, you must have a Gmail account to access Google Cloud:
 3. **Enable the Google Cloud Storage API**
 - In the Google Cloud Console search bar, type "APIs & Services" and enter that section:
 - Click "Enable APIs and services."
-- Search for "Cloud Storage API" and enable it.
+- Search for "BigQuery API" and enable it.
 
 4. **Create a service account**
 
@@ -25,9 +25,9 @@ Before using this module, you must have a Gmail account to access Google Cloud:
 - Click "Create service account."
 - Specify a name and description for the service account.
 - Assign the required role:
-- Under "Select a role," search for "Storage Admin."
-- Storage Admin.
-- This role grants permissions to manage Cloud Storage files and settings.
+- Under "Select a role," search for "BigQuery Admin."
+- BigQuery Admin.
+- This role grants permissions to manage all BigQuery resources and data.
 - Continue and click "Create."
 
 5. **Generate a service account key**
@@ -56,7 +56,7 @@ Antes de usar este módulo, debe tener una cuenta de Gmail para acceder a Google
 3. **Habilite la API de Google Cloud Storage**
 - En la barra de búsqueda de la consola de Google Cloud, escriba "API y servicios" y acceda a esa sección:
 - Haga clic en "Habilitar API y servicios".
-- Busque "API de Cloud Storage" y habilítela.
+- Busque "API de BigQuery" y habilítela.
 
 4. **Crear una cuenta de servicio**
 
@@ -64,9 +64,9 @@ Antes de usar este módulo, debe tener una cuenta de Gmail para acceder a Google
 - Haga clic en "Crear cuenta de servicio".
 - Especifique un nombre y una descripción para la cuenta de servicio.
 - Asignar el rol requerido:
-- En "Seleccionar un rol", busque "Administrador de almacenamiento".
-- Administrador de almacenamiento.
-- Este rol otorga permisos para administrar los archivos y la configuración de Cloud Storage.
+- En "Seleccionar un rol", busque "Administrador de BigQuery".
+- Administrador de BigQuery.
+- Este rol otorga permisos para administrar todos los recursos y datos de BigQuery.
 - Continúe y haga clic en "Crear".
 
 5. **Generar una clave de cuenta de servicio**
@@ -96,7 +96,7 @@ Antes de usar este módulo, você precisa ter uma conta do Gmail para acessar o 
 3. **Habilite a API do Google Cloud Storage**
 - Na barra de pesquisa do Google Cloud Console, digite "APIs e serviços" e entre nessa seção:
 - Clique em "Habilitar APIs e serviços".
-- Pesquise por "API do Cloud Storage" e habilite-a.
+- Pesquise por "API do BigQuery" e habilite-a.
 
 4. **Criar uma conta de serviço**
 
@@ -104,9 +104,9 @@ Antes de usar este módulo, você precisa ter uma conta do Gmail para acessar o 
 - Clique em "Criar conta de serviço".
 - Especifique um nome e uma descrição para a conta de serviço.
 - Atribua a função necessária:
-- Em "Selecionar uma função", pesquise por "Administrador de armazenamento".
-- Administrador de armazenamento.
-- Esta função concede permissões para gerenciar arquivos e configurações do Cloud Storage.
+- Em "Selecionar uma função", pesquise por "Administrador de BigQuery".
+- Administrador de BigQuery.
+- Esta função concede permissões para gerenciar todos os recursos e dados do BigQuery.
 - Continue e clique em "Criar".
 
 5. **Gerar uma chave de conta de serviço**

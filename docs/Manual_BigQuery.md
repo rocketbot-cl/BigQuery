@@ -2,13 +2,13 @@
 
 
 
-# CloudStorage
+# BigQuery
   
-Este modulo permite subir archivos a CloudStorage.  
+Este módulo permite la integración y manipulación de datos en Google BigQuery.  
 
-*Read this in other languages: [English](Manual_CloudStorage.md), [Português](Manual_CloudStorage.pr.md), [Español](Manual_CloudStorage.es.md)*
+*Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs\Banner_CloudStorage.png)
+![banner](imgs/Banner_BigQuery.png o jpg)
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -35,17 +35,18 @@ Antes de usar este módulo, debe tener una cuenta de Gmail para acceder a Google
 3. **Habilite la API de Google Cloud Storage**
 - En la barra de búsqueda de la consola de Google Cloud, escriba "API y servicios" y acceda a esa sección:
 - Haga clic en "Habilitar API y servicios".
-- Busque "API de Cloud Storage" y habilítela.
+- Busque "API de BigQuery" y habilítela.
 
 4. **Crear una cuenta de servicio**
 
 - En la consola de Google Cloud, busque y seleccione "IAM y administración" → "Cuentas de servicio".
-- Haga clic en "Crear cuenta de servicio".
+- Haga 
+clic en "Crear cuenta de servicio".
 - Especifique un nombre y una descripción para la cuenta de servicio.
 - Asignar el rol requerido:
-- En "Seleccionar un rol", busque "Administrador de almacenamiento".
-- Administrador de almacenamiento.
-- Este rol otorga permisos para administrar los archivos y la configuración de Cloud Storage.
+- En "Seleccionar un rol", busque "Administrador de BigQuery".
+- Administrador de BigQuery.
+- Este rol otorga permisos para administrar todos los recursos y datos de BigQuery.
 - Continúe y haga clic en "Crear".
 
 5. **Generar una clave de cuenta de servicio**
@@ -57,19 +58,32 @@ Antes de usar este módulo, debe tener una cuenta de Gmail para acceder a Google
 
 ## Descripción de los comandos
 
-### Configurar credenciales Google Cloud Storage
+### Configurar credenciales Google Cloud BigQuery
   
-Configura credenciales de Cloud Storage
+Configura credenciales de Cloud BigQuery
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Ruta archivo de credenciales|Ruta del archivo de credenciales de Google Cloud Storage|C:\Usuario\Desktop\credentials.json|
+|Ruta archivo de credenciales|Ruta del archivo de credenciales de Google Cloud BigQuery|C:\Usuario\Desktop\credentials.json|
 
-### Subir archivo
+### Leer datos de BigQuery
   
-Sube un archivo
+Ejecutar una consulta SQL y obtener resultados 
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Ruta del archivo|Ruta del archivo a subir|C:\Usuario\Desktop\file.png|
-|Bucket name|El nombre del bucket donde se subira el archivo|your-bucket-name|
-|Blob name|El nombre del blob donde se subira el archivo|your destination blob name|
-|Timeout|Timeout de la peticion. Si se deja vacio, por defecto es 1000|1000|
+|Consulta|Query SQL|SELECT producto_id FROM proyecto_id.store.sell|
+|ID del Proyecto|Project ID|bigquery-467823|
+|Asignar resultado a Variable|Resultado|Variable|
+
+### Cargar datos
+  
+Cargar datos desde un archivo CSV
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Dataset ID|Dataset ID|dataset_id|
+|Table ID|table_id|table_id|
+|Ruta del archivo CSV|Ruta del archivo csv|C:\Usuario\Desktop\file.csv|
+|Tiene Cabeceras|Marcar si el archivo .csv tiene encabezados|True|
+|Disposicion de escritura|Forma en que se cargaran los datos|WRITE_APPEND|
+|Cadena JSON del esquema|Ruta del archivo json (opcional)|C:\Usuario\Desktop\schema.json|
+|ID del Proyecto|Project ID|bigquery-467823|
+|Asignar resultado a Variable|Resultado|Variable|

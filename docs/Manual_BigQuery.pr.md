@@ -2,13 +2,13 @@
 
 
 
-# CloudStorage
+# BigQuery
   
-Esse módulo permite fazer upload de arquivos para o CloudStorage.  
+Este módulo permite a integração e manipulação de dados no Google BigQuery.  
 
-*Read this in other languages: [English](Manual_CloudStorage.md), [Português](Manual_CloudStorage.pr.md), [Español](Manual_CloudStorage.es.md)*
+*Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs\Banner_CloudStorage.png)
+![banner](imgs/Banner_BigQuery.png o jpg)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -36,17 +36,18 @@ Antes de usar este módulo, você precisa ter uma conta do Gmail para acessar o 
 3. **Habilite a API do Google Cloud Storage**
 - Na barra de pesquisa do Google Cloud Console, digite "APIs e serviços" e entre nessa seção:
 - Clique em "Habilitar APIs e serviços".
-- Pesquise por "API do Cloud Storage" e habilite-a.
+- Pesquise por "API do BigQuery" e habilite-a.
 
 4. **Criar uma conta de serviço**
 
 - No console do Google Cloud, pesquise e selecione "IAM e Admin" → "Contas de serviço"
 - Clique em "Criar conta de serviço".
-- Especifique um nome e uma descrição para a conta de serviço.
+- Especifique um nome e uma descrição para a conta de 
+serviço.
 - Atribua a função necessária:
-- Em "Selecionar uma função", pesquise por "Administrador de armazenamento".
-- Administrador de armazenamento.
-- Esta função concede permissões para gerenciar arquivos e configurações do Cloud Storage.
+- Em "Selecionar uma função", pesquise por "Administrador de BigQuery".
+- Administrador de BigQuery.
+- Esta função concede permissões para gerenciar todos os recursos e dados do BigQuery.
 - Continue e clique em "Criar".
 
 5. **Gerar uma chave de conta de serviço**
@@ -61,14 +62,27 @@ Antes de usar este módulo, você precisa ter uma conta do Gmail para acessar o 
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Credentials file path|Google Cloud Storage credentials file path|C:\Usuario\Desktop\credentials.json|
+|Credentials file path|Google Cloud BigQuery credentials file path|C:\Usuario\Desktop\credentials.json|
 
-### Upload file
+### Read data from BigQuery
   
-Upload a file
+Run an SQL query and get results
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|File path|File path to upload|C:\Usuario\Desktop\file.png|
-|Bucket name|The name of the bucket where the file will be uploaded|your-bucket-name|
-|Blob name|The name of the blob where the file will be uploaded|your destination blob name|
-|Timeout|Timeout of the request. If left empty, by default is 1000|1000|
+|Query String|Consulta SQL|SELECT producto_id FROM proyecto_id.store.sell|
+|Project ID|Project ID|bigquery-467823|
+|Atribuir resultado à variável|Resultado|Variável|
+
+### Load data
+  
+Load data from CSV file
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Dataset ID|Dataset ID|dataset_id|
+|Table ID|table_id|table_id|
+|File path CSV|File path csv|C:\Usuario\Desktop\file.csv|
+|tem cabeçalhos|Marcar se o arquivo .csv tem cabeçalhos|True|
+|Organizar por|Classifique os emails listados pelo parâmetro desejado|WRITE_APPEND|
+|Schema JSON|File path json (optional)|C:\Usuario\Desktop\schema.json|
+|Project ID|Project ID|bigquery-467823|
+|Atribuir resultado à variável|Resultado|Variável|
