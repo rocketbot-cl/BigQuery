@@ -103,7 +103,7 @@ if module == "loadDataFromCSVFile":
     has_header = GetParams("has_header")
     has_header = str(has_header) == "true" or str(has_header) == "True"
     var_ = GetParams('var_')
-    
+
     try:
         # Validar que el archivo sea CSV
         if not (path_file.lower().endswith('.csv') or path_file.startswith("gs://") and '.csv' in path_file.lower()):

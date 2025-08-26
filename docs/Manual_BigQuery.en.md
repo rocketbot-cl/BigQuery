@@ -82,7 +82,7 @@ Load data from CSV file
 |Table ID|table_id|table_id|
 |File path CSV|File path csv|C:\Usuario\Desktop\file.csv|
 |Has Headers|Check if the .csv file has headers|True|
-|Write disposition|Sort the listed emails by the desired parameter|WRITE_APPEND|
-|Schema JSON|File path json (optional)|C:\Usuario\Desktop\schema.json|
+|Write disposition|The way the data will be loaded|WRITE_APPEND|
+|Schema JSON|File path json|C:\Usuario\Desktop\schema.json|
 |Project ID|Project ID|bigquery-467823|
 |Assign result to a Variable|Result|Variable|

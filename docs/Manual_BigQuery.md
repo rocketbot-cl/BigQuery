@@ -84,6 +84,6 @@ Cargar datos desde un archivo CSV
 |Ruta del archivo CSV|Ruta del archivo csv|C:\Usuario\Desktop\file.csv|
 |Tiene Cabeceras|Marcar si el archivo .csv tiene encabezados|True|
 |Disposicion de escritura|Forma en que se cargaran los datos|WRITE_APPEND|
-|Cadena JSON del esquema|Ruta del archivo json (opcional)|C:\Usuario\Desktop\schema.json|
+|Cadena JSON del esquema|Ruta del archivo json|C:\Usuario\Desktop\schema.json|
 |ID del Proyecto|Project ID|bigquery-467823|
 |Asignar resultado a Variable|Resultado|Variable|
