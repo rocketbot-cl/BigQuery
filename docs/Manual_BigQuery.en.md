@@ -8,7 +8,7 @@ This module allows for the integration and manipulation of data in Google BigQue
 
 *Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs/Banner_BigQuery.png o jpg)
+![banner](imgs/Banner_BigQuery.jpg)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
