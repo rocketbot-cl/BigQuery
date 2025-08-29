@@ -8,7 +8,7 @@ Este módulo permite a integração e manipulação de dados no Google BigQuery.
 
 *Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs/Banner_BigQuery.png o jpg)
+![banner](imgs/Banner_BigQuery.jpg)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -62,27 +62,27 @@ serviço.
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Credentials file path|Google Cloud BigQuery credentials file path|C:\Usuario\Desktop\credentials.json|
+|Caminho do arquivo de credenciais|Caminho do arquivo de credenciais do Google Cloud BigQuery|C:\Usuario\Desktop\credentials.json|
 
-### Read data from BigQuery
+### Ler dados do BigQuery
   
-Run an SQL query and get results
+Executar uma consulta SQL e obter resultados
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Query String|Consulta SQL|SELECT producto_id FROM proyecto_id.store.sell|
-|Project ID|Project ID|bigquery-467823|
+|Consulta|Consulta SQL|SELECT producto_id FROM proyecto_id.store.sell|
+|ID do Projeto|Project ID|bigquery-467823|
 |Atribuir resultado à variável|Resultado|Variável|
 
-### Load data
+### Carregar dados
   
-Load data from CSV file
+Carregar dados de um arquivo CSV
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Dataset ID|Dataset ID|dataset_id|
-|Table ID|table_id|table_id|
-|File path CSV|File path csv|C:\Usuario\Desktop\file.csv|
+|table ID|table_id|table_id|
+|Caminho do arquivo csv|Caminho do arquivo csv|C:\Usuario\Desktop\file.csv|
 |tem cabeçalhos|Marcar se o arquivo .csv tem cabeçalhos|True|
-|Organizar por|Classifique os emails listados pelo parâmetro desejado|WRITE_APPEND|
-|Schema JSON|File path json (optional)|C:\Usuario\Desktop\schema.json|
-|Project ID|Project ID|bigquery-467823|
+|Escreva a disposição|A forma como os dados serão carregados|WRITE_APPEND|
+|Esquema JSON|Caminho do arquivo json|C:\Usuario\Desktop\schema.json|
+|ID do Projeto|Project ID|bigquery-467823|
 |Atribuir resultado à variável|Resultado|Variável|

@@ -21,11 +21,11 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1.   
 
 
-2. Read data from BigQuery  
-Run an SQL query and get results
+2. Ler dados do BigQuery  
+Executar uma consulta SQL e obter resultados
 
-3. Load data  
-Load data from CSV file  
+3. Carregar dados  
+Carregar dados de um arquivo CSV  
 
 
 

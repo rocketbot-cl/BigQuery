@@ -8,7 +8,7 @@ This module allows for the integration and manipulation of data in Google BigQue
 
 *Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs/Banner_BigQuery.png o jpg)
+![banner](imgs/Banner_BigQuery.jpg)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -82,7 +82,7 @@ Load data from CSV file
 |Table ID|table_id|table_id|
 |File path CSV|File path csv|C:\Usuario\Desktop\file.csv|
 |Has Headers|Check if the .csv file has headers|True|
-|Write disposition|Sort the listed emails by the desired parameter|WRITE_APPEND|
-|Schema JSON|File path json (optional)|C:\Usuario\Desktop\schema.json|
+|Write disposition|The way the data will be loaded|WRITE_APPEND|
+|Schema JSON|File path json|C:\Usuario\Desktop\schema.json|
 |Project ID|Project ID|bigquery-467823|
 |Assign result to a Variable|Result|Variable|

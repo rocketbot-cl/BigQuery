@@ -8,7 +8,7 @@ Este módulo permite la integración y manipulación de datos en Google BigQuery
 
 *Read this in other languages: [English](Manual_BigQuery.md), [Português](Manual_BigQuery.pr.md), [Español](Manual_BigQuery.es.md)*
   
-![banner](imgs/Banner_BigQuery.png o jpg)
+![banner](imgs/Banner_BigQuery.jpg)
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -84,6 +84,6 @@ Cargar datos desde un archivo CSV
 |Ruta del archivo CSV|Ruta del archivo csv|C:\Usuario\Desktop\file.csv|
 |Tiene Cabeceras|Marcar si el archivo .csv tiene encabezados|True|
 |Disposicion de escritura|Forma en que se cargaran los datos|WRITE_APPEND|
-|Cadena JSON del esquema|Ruta del archivo json (opcional)|C:\Usuario\Desktop\schema.json|
+|Cadena JSON del esquema|Ruta del archivo json|C:\Usuario\Desktop\schema.json|
 |ID del Proyecto|Project ID|bigquery-467823|
 |Asignar resultado a Variable|Resultado|Variable|

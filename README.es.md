@@ -25,7 +25,7 @@ Configura credenciales de Cloud BigQuery
 Ejecutar una consulta SQL y obtener resultados 
 
 3. Cargar datos  
-Cargar datos desde un archovo CSV  
+Cargar datos desde un archivo CSV  
 
 
 

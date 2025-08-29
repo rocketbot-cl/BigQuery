@@ -1,13 +1,13 @@
 {
   "author": "Guiredys Gomez",
-  "description": "Este módulo permite la integración y manipulación de datos en Google BigQuery.",
+  "description": "This module allows for the integration and manipulation of data in Google BigQuery.",
   "description_lang": {
         "en": "This module allows for the integration and manipulation of data in Google BigQuery.",
         "es": "Este módulo permite la integración y manipulación de datos en Google BigQuery.",
         "pr": "Este módulo permite a integração e manipulação de dados no Google BigQuery."
     },
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "homepage": "http://rocketbot.com/",
   "name": "BigQuery",
@@ -314,9 +314,9 @@
               "pr": "Esquema JSON"
             },
             "description": {
-              "es": "Ruta del archivo json (opcional)",
-              "en": "File path json (optional)",
-              "pr": "Caminho do arquivo json (opcional)"
+              "es": "Ruta del archivo json",
+              "en": "File path json",
+              "pr": "Caminho do arquivo json"
             },
             "id": "schema_json",
             "css": "col-md-12"
